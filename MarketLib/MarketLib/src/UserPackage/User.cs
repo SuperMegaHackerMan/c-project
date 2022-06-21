@@ -12,6 +12,8 @@ namespace MarketLib.src.UserP
     public class User
     {
         protected ConcurrentDictionary<int, Basket> baskets;
+        protected ConcurrentDictionary<int, Notification> notifications;
+        protected int notifCounter;
 
         public User()
         {
@@ -21,6 +23,8 @@ namespace MarketLib.src.UserP
         public User(ConcurrentDictionary<int, Basket> baskets)
         {
             this.baskets = baskets;
+            this.notifCounter = 0;
+            this.notifications = new ConcurrentDictionary<int, Notification>();
         }
 
         /// <summary>
@@ -44,5 +48,16 @@ namespace MarketLib.src.UserP
         {
             return baskets;
         }
+
+        public ConcurrentDictionary<int, Notification> getNotifications()
+        {
+            return notifications;
+        }
+
+        public void addNotification(Notification n) {
+            this.notifications.AddOrUpdate(notifCounter, n);
+            notifCounter = notifCounter + 1;
+        }
+
     }
 }
