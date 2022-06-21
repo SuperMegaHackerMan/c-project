@@ -80,6 +80,13 @@ namespace MarketLib.src.Service
             /// <returns>the users cart</returns>
             ICollection<Basket> showCart(string userID); //TODO: same as in store, we need a data class and a controller class.
 
+            /// <summary>
+            /// will notify a user (add a notification to his stack)
+            /// </summary>
+            /// <param name="userID"></param>
+            /// <param name="notif"></param>
+            void notifyUser(string userID, string notif);
+
 
             /// <summary>
             /// update a product amount in a specific store basket.

@@ -54,8 +54,9 @@ namespace MarketLib.src.UserP
             return notifications;
         }
 
-        public void addNotification(Notification n) {
-            this.notifications.AddOrUpdate(notifCounter, n);
+        public void addNotification(string s) {
+            notifications nt = new Notification(s);
+            this.notifications.AddOrUpdate(notifCounter, nt);
             notifCounter = notifCounter + 1;
         }
 

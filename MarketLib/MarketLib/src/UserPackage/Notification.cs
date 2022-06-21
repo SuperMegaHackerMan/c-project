@@ -10,14 +10,14 @@ namespace MarketLib.src.UserP
 {
     public class Notification
     {
-        private String msg; 
+        private string msg; 
 
-        public Notification(String msg)
+        public Notification(string msg)
         {
             this.msg = msg;
         }
 
-        public String getMsg(Product p)
+        public string getMsg(Product p)
         {
             return msg;
         }

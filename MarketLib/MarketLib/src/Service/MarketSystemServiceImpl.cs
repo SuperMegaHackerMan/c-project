@@ -38,6 +38,9 @@ namespace MarketLib.src.Service
             market.logout(username);
         }
 
+        void notifyUser(string userID, string notif);{
+            market.getUserByConnectionId(userID).addNotification(notif);
+        }
 
         public int openNewStore(string username, string newStoreName)
         {
